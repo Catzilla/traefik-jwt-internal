@@ -13,7 +13,7 @@ Generate JWT token for internal services
 
 `header.prefix` *(string)* [optional, default: `Bearer`] - Header value prefix
 
-`claims` *string* - Token claims JSON (parsed as Go template)
+`claims` *(string)* - Token claims JSON (parsed as Go template)
 
 ## Claims examples
 
