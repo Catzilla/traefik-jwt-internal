@@ -21,7 +21,7 @@ Generate JWT token for internal services
 
 ```
 {
-    "sub": "{{ .Headers.Get "X-User-Id" }}"
+    "sub": "{{ .Header.Get "X-User-Id" }}"
 }
 ```
 
@@ -29,7 +29,7 @@ Generate JWT token for internal services
 
 ```
 {
-    {{ $header := .Headers.Get "X-User" }}
+    {{ $header := .Header.Get "X-User" }}
     {{ $user := unmarshalJson $header }}
     "sub": "{{ $user.id }}"
 }
