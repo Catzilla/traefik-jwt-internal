@@ -1,0 +1,16 @@
+---
+displayName: JWT Internal
+type: middleware
+import: github.com/Catzilla/traefik-jwt-internal
+summary: Generate JWT token for internal services
+testData:
+  alg: HS256
+  secret: <at-least-32-chars-long-secret>
+  ttl: 120
+  header:
+    name: Authorization
+    prefix: Bearer
+  claims: |
+    {
+      "sub": "{{ .Headers.Get "X-User-Id" }}"
+    }
