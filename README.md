@@ -3,17 +3,14 @@ Generate JWT token for internal services
 
 ## Configuration
 
-`alg` *(string)* [optional, default: `HS256`] - Hash algorithm, currently supported `HS256` and `HS512`
-
-`secret` *(string)* - Signing secret, at least 32 characters long
-
-`ttl` *(int64)* [optional, default: `120`] - Token expiry time in seconds
-
-`header.name` *(string)* [optional, default: `Authorization`] - Header in which to write token
-
-`header.prefix` *(string)* [optional, default: `Bearer`] - Header value prefix
-
-`claims` *(string)* - Token claims JSON (parsed as Go template)
+| Key | Type | Required | Default | Description |
+| :-- | :-- | :-: | :-- | :-- |
+| `alg` | string | | `HS256` | Hash algorithm, currently supported `HS256` and `HS512` |
+| `claims` | string | :white_check_mark: | | Token claims JSON (parsed as Go template) |
+| `header.name` | string | | `Authorization` | Header in which to write token |
+| `header.prefix` | string | | `Bearer` | Header value prefix |
+| `secret` | string | :white_check_mark: | | Signing secret, at least 32 characters long |
+| `ttl` | int64 | | `120` | Token expiry time in seconds |
 
 ## Claims examples
 
